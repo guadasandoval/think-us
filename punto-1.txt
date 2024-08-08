@@ -1,0 +1,16 @@
+1. Problemas de diseño – 1 puntos
+Has sido encargado de plantear una solución al siguiente problema.
+Imagina que tenemos un sistema escrito en cualquier lenguaje de programación compilado,
+este sistema se conecta a una base de datos SQL, el sistema funciona muy bien cuando hay
+baja demanda de transacciones, pero cuando la cantidad de transacciones aumenta el sistema
+deja de responder solicitudes, se encontró que la base de datos es el cuello de botella y no
+acepta solicitudes en paralelo para completar las transacciones. ¿Qué solución plantearías
+para receptar más cantidad de transacciones adaptándonos al cuello de botella de la base de
+datos?
+
+En principio optimizaría las consultas realizadas para que sean mas eficientes,
+evitando traer información innecesaria.
+Otra solución posible seria implementar una memoria caché para las consultas que se realizan frecuentemente.
+De ser necesario añadiría más servidores que gestionen las peticiones.
+De ser posible implementaría API gateway junto con la memoria caché para que gestione
+las peticiones disminuyendo la sobrecarga del sistema.

@@ -1,0 +1,38 @@
+5. Se te ha asignado la tarea de presentar una nueva tecnología que mejorará el
+rendimiento del sistema de órdenes a un grupo de stakeholders que no son
+técnicos. La tecnología implica el uso de microservicios para mejorar la
+escalabilidad y reducir el tiempo de respuesta.
+¿Cómo explicarías esta nueva tecnología y sus beneficios en términos no técnicos
+para asegurar que todos comprendan su importancia y el impacto que tendrá en el
+negocio?
+
+En cuanto a los beneficios de implementar el uso de microservicios en términos
+no técnicos me referiría a cada microservicio del sistema como un box(caja) distinto.
+Donde cada box se encuentra rotulado y contiene en su interior las herramientas,
+el código backend, e información, la base de datos.
+
+La escalabilidad es una de las ventajas que ofrece esta tecnología,
+permitiendo manipular cada box según sea necesario. En este punto se podría
+decir que si necesitamos más herramientas o guardar más información en un box
+determinado sólo basta con cambiar el tamaño de ese box sin comprometer al resto.
+
+Otro beneficio importante que ofrece esta tecnología es el mantenimiento de la misma, 
+dado que al tener cada servicio en un box distinto, es facil acceder a su contenido
+para realizar modificaciones o en su defecto los arrelgos que sean necesarios,
+tomando el control de una parte particular del sistema mientras los otros box
+continuan en su correcto funcionamiento.
+Esta segmentación tambien nos permite trabajar en los distintos box en simultáneo,
+ya sea para su mantenimiento como para la creación de nuevos box/servicios, 
+acelerando los tiempos de producción.
+
+Con relación a los tiempos de respuesta es sencillo visualizar que si alguien,
+en este caso los clients apps, nos pide que busquemos una herramienta o información
+específica sabremos donde hacerlo ya que nuestros box están correctamente rotulados
+y conocemos dónde se encuentra la información solicitada, evitando de esta manera
+invertir el tiempo y nuestros recursos en revisar todos los boxs para hallar lo pedido,
+que en un caso feliz podría estar en el primer box o de lo contrario en el último.
+Esto trasladado a múltiples peticiones en simultáneo comprometería al buen funcionamiento
+del proyecto si hablamos de grandes volumenes de información, dado que tomaria más
+tiempo buscar cada una de las peticiones, el proyecto podria colapsar y desde el lado del usuario
+estaríamos ofreciendo una mala experiencia.
+

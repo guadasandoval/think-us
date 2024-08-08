@@ -1,0 +1,43 @@
+4. Se te ha asignado poder entender esta arquitectura para poder aplicarlo a un
+nuevo proyecto, se necesita que expliques a detalle cual es la función de cada
+término mostrado en la imagen, en caso de desconocer de uno de los términos,
+explicar lo que creas que significaría según el flujo que sigue cada proceso así
+mismo si existiera cosas que mejorarías agrégalo como un detalle junto a su ¿Por
+qué?
+
+#CLIENTS APPS
+
+Corresponde a los usuarios o clientes de nuestro sitio. Son quienes realizan las solicitudes
+o peticiones a nuestro sistema de diferentes plataformas por la que se diferencian entre web o 
+mobile.
+
+#MICROSERVICES
+
+1. API GATEWAY
+Recibe las solicitudes emitidas por los clientes del sistema a una ruta determinada y se encarga de 
+derivar la misma al módulo del servicio correspondiente.
+Una de sus principales ventajas es que es un único punto de entrada para las aplicaciones. 
+Además maneja tareas comunes como registro, autenticación, limitación de velocidad y devuelve la respuesta al cliente.
+Puede dividir una solicitud en varias solicitudes y de esa manera reducir la cantidad de solicitudes entre el cliente y el servidor,
+reduciendo la velocidad de respuesta y mejorando la experiencia del usuario.
+
+2. CATALOG-DB, SHOPPIG CART-DB, DISCOUNT-DB, ORDERING-DB
+
+Cada uno de estos módulos corresponde a un servicio diferente por lo que se puede decir
+que estamos hablando de un proyecto que implementa la arquitectura de microservicios.
+Cada módulo contiene su lógica y su propia base de datos que puede ser relacional como no relacional.
+Esta arquitectura favorece el rendimiento de la aplicacion ya que los datos estan distribuidos en
+diferentes bases y las solicitudes sólo se van a realizar al servicio especificado.
+A su vez este tipo de arquitectura nos permite la posibilidad de elegir diferentes tecnologías
+para cada servicio según sea necesario.
+ 
+3. MESSAGE BROKER
+
+Sistema de mensajería que puede ser síncrono o asíncrono. Funciona como canal de comunicación
+entre los servicios, donde por un lado se encuentra un servicio que realiza una solicitud y 
+por el otro un servicio que la recibe.
+
+#MEMORIA CACHÉ
+
+Anexaría junto con API GATEWAY una memoria caché, que se encargue de devolver lo que esta cacheado si una misma solicitud se realizó con anterioridad. Lo agregaría para reducir la
+velocidad en las respuestas, por ejemplo con datos de autenticación de usuario
